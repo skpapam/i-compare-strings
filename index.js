@@ -4,18 +4,20 @@
  * Copyright 2016 Skevos Papamichail
  * Licensed under MIT license
  */
-module.exports = ICompareStrings;
 
+
+module.exports = ICompareStrings;
+	
 /**
  * Compare two strings in constant time
  * @param {String} string1
  * @param {String} string2
  * @param {Boolean} caseSensitive (Default is true)
  * @return {Boolean} 
- */
-function ICompareStrings(string1, string2, caseSensitive = true){
+ */	
+function ICompareStrings(string1, string2, caseSensitive){
 	var result = 0;
-	
+	caseSensitive = caseSensitive === undefined ? true : !!caseSensitive;
 	//if parameters are not string return false
 	if(typeof string1 !== 'string' || typeof string2 !== 'string') return false;
 	
@@ -37,3 +39,5 @@ function ICompareStrings(string1, string2, caseSensitive = true){
 	//return result
 	return result === 0;
 }
+
+
